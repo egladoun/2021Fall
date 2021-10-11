@@ -5,10 +5,11 @@ const session = {
 
 export default session;
 
-export function Login(){
+export function Login(email, password){
     session.user = {
         FirstName: 'Moshe',
-        LastName: 'Plotkin',
+        LastName: email,
+        Password: password,
         id: 613,
     }
 }

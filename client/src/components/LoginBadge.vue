@@ -19,14 +19,16 @@ import Session from "../services/session";
 
 export default {
     data(): ()=>({
-        Session
-    }),
+        return ({
+            Session
+        })
+    },
     methods: {
         login() {
-            console.log(Session)
-            Login();
-            //this.Session.user.FirstName = this.Session.user.FirstName = ""
-            console.log(Session)
+            
+            this.$router.push('/login');
+            //this.Session.Login();
+
         }
     },
     computed:{

@@ -1,8 +1,10 @@
 <template>
   <div class ="container">
     <Nav />
+
     <router-view/>
   </div>
+  
 </template>
 
 <style lang="scss">
