@@ -6,26 +6,23 @@
           <a class="button is-light" @click="login">
             Log in
           </a>
-        </div>
-        <div>
-            <div v-else>
-                Hello {{name}}
-            </div>
-        </div>
+    </div>
+    <div v-else>
+        Hello {{name}} 
+    </div>
 </template>
 
 <script>
 import Session from "../services/session";
 
 export default {
-    data(): ()=>({
-        return ({
+    data (){
+        return ({ 
             Session
         })
     },
     methods: {
-        login() {
-            
+        login(){
             this.$router.push('/login');
             //this.Session.Login();
 

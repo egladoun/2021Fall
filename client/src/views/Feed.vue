@@ -1,8 +1,8 @@
 <template>
   <div class="section">
-      <hl class="title">
+      <h1 class="title">
           Feed Page
-      </hl>
+      </h1>
   </div>
 </template>
 

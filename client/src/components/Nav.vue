@@ -6,17 +6,21 @@
       <h3 class="title">Be Happy</h3>
     </a>
 
-    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" :class="{'is-active': isActive }" @click="isActive = !isActive">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" :class="{'is-active': isActive }" @click="isActive = !isActive" >
       <span aria-hidden="true"></span>
       <span aria-hidden="true"></span>
       <span aria-hidden="true"></span>
     </a>
   </div>
 
-  <div class="navbar-menu" :class="{'is-active': isActive }">
+  <div class="navbar-menu " :class="{'is-active': isActive }">
     <div class="navbar-start">
       <a class="navbar-item" href="/">
         Home
+      </a>
+
+      <a class="navbar-item" href="/feed">
+        Feed
       </a>
 
       <a class="navbar-item">
@@ -53,16 +57,20 @@
     </div>
   </div>
 </nav>
+
 </template>
 
 <script>
-import Session from "../services/session";
+import LoginBadge from './LoginBadge';
 
 export default {
-    data() {
+    data(){
         return {
             isActive: false
         }
+    },
+    components: {
+        LoginBadge,
     }
 }
 </script>
