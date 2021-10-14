@@ -6,6 +6,15 @@ const session = {
     toRoute: '/feed',
     Login(email, password){
 
+        const user = login(handle, password);
+
+        const session = {
+            user: null,
+            messages: [],
+            toRoute: '/feed',
+            
+        }
+
         this.user = {
             FirstName: 'Moshe',
             LastName: email,
