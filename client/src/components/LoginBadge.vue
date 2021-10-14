@@ -14,7 +14,6 @@
 
 <script>
 import Session from "../services/session";
-
 export default {
     data (){
         return ({ 
@@ -25,7 +24,6 @@ export default {
         login(){
             this.$router.push('/login');
             //this.Session.Login();
-
         }
     },
     computed:{
@@ -37,5 +35,4 @@ export default {
 </script>
 
 <style>
-
 </style>
