@@ -3,7 +3,7 @@
         <div class="columns">
             <div class="column">
                 <Nav />
-
+                <messages
                 <router-view/>                 
             </div>
         </div>
@@ -19,7 +19,9 @@
 import Nav from "./components/Nav";
 export default {
     components: {
-        Nav
+        Nav,
+        Messages
+        
     }
 }
 </script>
