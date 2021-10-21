@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import session from "../services/session"
+import session from "../services/session";
 
 export default {
     data: ()=> ({
@@ -16,6 +16,7 @@ export default {
     methods: {
         done(i){
             this.messages.splice(i, 1);
+            
         }
     }
 }
