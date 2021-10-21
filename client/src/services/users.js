@@ -1,5 +1,6 @@
 /* B"H
 */
+import { GetByHandle } = require("./users");
 
 const list = [
     { 
