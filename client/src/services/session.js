@@ -1,6 +1,6 @@
 import router from "../router";
 import { Login } from "./users";
-import { NotificationProgrammatic } from "@ouruga-ui/oruga-next/dist/esm/notification";
+import { NotificationProgrammatic } from "@oruga-ui/oruga-next/dist/esm/notification"
 
 const session = {
     user: null,
@@ -11,9 +11,9 @@ const session = {
         try {
             const response = Login(handle, password);
 
-        this.user = response.user;
+            this.user = response.user;
 
-        router.push(this.toRoute);
+            router.push(this.toRoute);
 
         } catch (error) {
             this.messages.push({ text: error.msg, type: 'warning' })

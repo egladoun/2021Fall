@@ -42,11 +42,11 @@ const list = [
 
 ];
 
-export function GetAll() { return list; }
-export function Get(user_id) { return list[user_id]; }
-export function GetByHandle(handle) { return ({ ...list.find( x => x.handle == handle ), password: undefined }); } 
+module.exports.GetAll = function GetAll() { return list; }
+module.exports.Get = function Get(user_id) { return list[user_id]; }
+module.exports.GetByHandle = function GetByHandle(handle) { return ({ ...list.find( x => x.handle == handle ), password: undefined }); } 
 
-export function Add(user) {
+module.exports.Add = function Add(user) {
     if(!user.firstName){
         throw { code: 422, msg: "First Name is required" }
     }
@@ -55,7 +55,7 @@ export function Add(user) {
 }
 
 
-export function Update(user_id, user) {
+module.exports.Update = function Update(user_id, user) {
     const oldObj = list[user_id];
     if(user.firstName){
         oldObj.firstName = user.firstName;
@@ -73,13 +73,13 @@ export function Update(user_id, user) {
     return { ...oldObj, password: undefined };
 }
 
-export function Delete(user_id) {
+module.exports.Delete = function Delete(user_id) {
     const user = list[user_id];
     list.splice(user_id, 1);
     return user;
 }
 
-export function Login(handle, password){
+module.exports.Login = function Login(handle, password){
     console.log({ handle, password})
     const user = list.find(x=> x.handle == handle);
     if(!user) throw { code: 401, msg: "Sorry there is no user with that handle" };
@@ -91,4 +91,4 @@ export function Login(handle, password){
     const data = { ...user, password: undefined };
 
     return { user: data };
-}
+} 

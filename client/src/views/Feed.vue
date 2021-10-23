@@ -21,7 +21,9 @@ import Post from '../components/Post.vue';
 import session from "../services/session";
 import { GetWall } from "../services/posts";
 export default {
-  components: { Post },
+  components: {
+    Post
+    },
     data: ()=> ({
         posts: GetWall(session.user.handle)
     })

@@ -3,6 +3,7 @@
         <div class="notification is-light" :class="`is-${message.type}`" v-for="(message, i) in messages" :key="i">
             <button class="delete" @click.prevent="done(i)"></button>
             {{message.text}}
+        </div>
     </div>
 </template>
 
