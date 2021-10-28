@@ -13,7 +13,7 @@ const port = process.env.PORT || 3000
 app
     .use('/', express.static(path.join(__dirname, '../docs')) )
     .use('/users', usersController )
-    .use('/posts', post)
+    .use('/posts', postsController)
 
 app
     .get('*', (req, res) => res.sendFile(path.join(__dirname, '../docs/index.html')) )
