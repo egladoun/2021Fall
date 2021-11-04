@@ -11,23 +11,18 @@ app
         res.send(model.Get(req.params.user_id));
     })
     .post("/login", (req, res, next) =>{
-        model.Login(req.body.handle, req.body.password, (err, user)=>{
-            if(err){
-                next(err); return;
-            }
-            res.send(user);
+        model.Login(req.body.handle, req.body.password
+            .then(user=>{
+                res.send(user);
+            }).catch(next)
         });
     })
     .post("/register", (req, res, next) =>{
-
-        const user = req.body;
-
-        model.AddUser(user, (err, user)=>{
-            if(err){
-                next(err);
-            }
-            res.send(user);
-        });
-    })
+        model.Add(req.body)
+            .then(user=>{
+                res.status(201).send(user);
+            })
+            .catch(next)
+    });
 
 module.exports = app;
