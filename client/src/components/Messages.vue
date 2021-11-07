@@ -1,5 +1,5 @@
 <template>
-    <div class="messages">
+    <div class="mesages">
         <div class="notification is-light" :class="`is-${message.type}`" v-for="(message, i) in messages" :key="i">
             <button class="delete" @click.prevent="done(i)"></button>
             {{message.text}}
@@ -9,7 +9,6 @@
 
 <script>
 import session from "../services/session";
-
 export default {
     data: ()=> ({
         messages: session.messages
@@ -23,7 +22,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
     div.messages div.notification.is-light {
         margin-bottom: 0px;
     }

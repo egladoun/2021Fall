@@ -1,3 +1,5 @@
+/*  B"H
+*/
 const express = require("express");
 const model = require("../models/posts");
 
@@ -12,16 +14,14 @@ app
     })
     .get("/:id", (req, res, next) =>{
         console.log(req.headers);
-        
+
         res.send(model.Get(req.params.id));
     })
     .post("/", (req, res, next) =>{
-        console.log(req.headers);
-        console.log(req.method);
-
         const newPost = model.Add(req.body)
 
-        res.send(model.Search(req.query.q));
+        res.status(201).send(newPost);
     })
+
 
 module.exports = app;

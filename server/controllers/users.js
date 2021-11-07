@@ -1,3 +1,5 @@
+/*  B"H
+*/
 const express = require("express");
 const model = require("../models/users");
 
@@ -13,10 +15,10 @@ app
     .post("/login", (req, res, next) =>{
 
         model.Login(req.body.handle, req.body.password)
-            .then(user=>{
+            .then(user=>{ 
                 res.send(user);
             })
-            .catch(next)
+            .catch(next) 
 
     })
     .post("/register", (req, res, next) =>{
@@ -24,7 +26,6 @@ app
             .then(user=>{
                 res.status(201).send(user);
             })
-            .catch(next)
+            .catch(next) 
     })
-
 module.exports = app;
