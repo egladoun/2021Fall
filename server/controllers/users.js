@@ -7,10 +7,16 @@ const app = express.Router();
 
 app
     .get("/", (req, res, next) =>{
-        res.send(model.GetAll());
+        model.GetAll()
+            .then
     })
     .get("/:user_id", (req, res, next) =>{
         res.send(model.Get(req.params.user_id));
+        model.Get(req.params.user_id)
+            .then(user=>{
+                .catch(next);
+            })
+            .catch(next);
     })
     .post("/login", (req, res, next) =>{
 
@@ -28,4 +34,12 @@ app
             })
             .catch(next) 
     })
+    .seed("/seed", (req, res, next) =>{
+        model.Seed(req.body)
+            .then(user=>{
+                res.status(201).send("Created");
+            })
+            .catch(next) 
+    })
+
 module.exports = app;
