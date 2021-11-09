@@ -51,3 +51,14 @@ Content-Type: application/json
         "handle": "@potus",
         "password": "password"
     }
+
+###
+PATCH http://localhost:3100/users/6189d512e84c47b5a81dafe1
+Content-Type: application/json
+
+{
+    "firstName": "Joe 66"
+}
+
+###
+POST http://localhost:3100/users/seed

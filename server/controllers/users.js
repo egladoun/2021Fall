@@ -8,15 +8,24 @@ const app = express.Router();
 app
     .get("/", (req, res, next) =>{
         model.GetAll()
-            .then
+            .then(user=>{
+                res.send(user);
+            })
+            .catch(then)
     })
-    .get("/:user_id", (req, res, next) =>{
-        res.send(model.Get(req.params.user_id));
+    get("/:user_id", (req, res, next) =>{
         model.Get(req.params.user_id)
             .then(user=>{
-                .catch(next);
+                res.send(user);
             })
             .catch(next);
+    })
+    .get("/:user_id", (req, res, next) =>{
+
+        model   .Update(req.params.user_id, req.body)
+                .then( user=> res.send(user) )
+                .catch(next);
+
     })
     .post("/login", (req, res, next) =>{
 
@@ -34,8 +43,8 @@ app
             })
             .catch(next) 
     })
-    .seed("/seed", (req, res, next) =>{
-        model.Seed(req.body)
+    .post("/seed", (req, res, next) =>{
+        model.Seed()
             .then(user=>{
                 res.status(201).send("Created");
             })
