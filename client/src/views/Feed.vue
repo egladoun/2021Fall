@@ -25,8 +25,11 @@ export default {
     Post
     },
     data: ()=> ({
-        posts: GetWall(session.user.handle)
-    })
+        posts: []
+    }),
+    async mounted(){
+        this.posts = await GetWall(session.user.handle)
+    }
 }
 </script>
 
