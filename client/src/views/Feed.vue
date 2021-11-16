@@ -1,6 +1,7 @@
 <template>
   <div class="section">
       <h1 class="title"> Feed Page </h1>
+
       <div class="columns">
         <div class="column is-one-third is-offset-one-third">
             
@@ -20,9 +21,10 @@
 import Post from '../components/Post.vue';
 import session from "../services/session";
 import { Delete, GetFeed } from "../services/posts";
+
 export default {
-  components: {
-    Post
+    components: {
+        Post
     },
     data: ()=> ({
         posts: []
@@ -32,7 +34,7 @@ export default {
     },
     methods: {
         async remove(post, i){
-            console.log({post}),
+            console.log({post})
             const response = await Delete(post._id)
             if(response.deleted){
                 this.posts.splice(i, 1)

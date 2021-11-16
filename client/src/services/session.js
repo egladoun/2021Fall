@@ -26,12 +26,13 @@ const session = {
         this.messages.push({ text: msg, type: 'warning' })
         NotificationProgrammatic.open({
             duration: 5000,
-            message: error.msg,
+            message: msg,
             variant: 'danger',
             type: 'danger',
             closable: true,
 
         })
+
     }
 };
 
