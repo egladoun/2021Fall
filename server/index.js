@@ -15,18 +15,20 @@ app
 
     /*
         Access-Control-Allow-Origin: https://foo.example
-        Access_Control-Allow-Methods: POST, GET, OPTIONS
+        Access-Control-Allow-Methods: POST, GET, OPTIONS
         Access-Control-Allow-Headers: X-PINGOTHER, Content-Type
     */
 
-        .use( (req, res, next) =>{
-            res.setHeader('Access-Control-Allow-Origin', '*');
-            res.setHeader('Access-Control-Allow-Methods', '*');
-            res.setHeader('Access-Control-Allow-Headers', '*');
-            next();
-        } )
-        .use(express.json())
-        .use('/users', usersController)
+    .use( (req, res, next) =>{
+        res.setHeader('Access-Control-Allow-Origin', '*');
+        res.setHeader('Access-Control-Allow-Methods', '*');
+        res.setHeader('Access-Control-Allow-Headers', '*');
+        next();
+    } )
+
+    .use(express.json())
+    .use('/users', usersController )
+    .use('/posts', postsController)
 
 app
     .get('*', (req, res) => res.sendFile(path.join(__dirname, '../docs/index.html')) )
