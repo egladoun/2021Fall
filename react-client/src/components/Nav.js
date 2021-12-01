@@ -1,19 +1,26 @@
-<template>
+import React from "react";
+//import LoginBadge from './LoginBadge';
+
+export default function Nav() {
+  
+  const data = { isActive: false }
+
+  return (
   <nav className="navbar is-primary" role="navigation" aria-label="main navigation">
   <div className="navbar-brand">
     <a className="navbar-item" href="https://bulma.io">
-      <img src="../assets/logo.png" height="28">
+      <img src="../assets/logo.png" height="28" />
       <h3 className="title">Be Happy</h3>
     </a>
 
-    <a role="button" className="navbar-burger" aria-label="menu" aria-expanded="false" :className="{'is-active': isActive }" @click="isActive = !isActive" >
+    <a role="button" className="navbar-burger" aria-label="menu" aria-expanded="false" className="{'is-active': isActive }" click="isActive = !isActive" >
       <span aria-hidden="true"></span>
       <span aria-hidden="true"></span>
       <span aria-hidden="true"></span>
     </a>
   </div>
 
-  <div className="navbar-menu " :className="{'is-active': isActive }">
+  <div className="navbar-menu " className="{'is-active': isActive }">
     <div className="navbar-start">
       <router-link className="navbar-item is-tab" to="/" active-className="is-active" exact>
         Home
@@ -42,7 +49,7 @@
           <a className="navbar-item">
             Contact
           </a>
-          <hr className="navbar-divider">
+          <hr className="navbar-divider" />
           <a className="navbar-item">
             Report an issue
           </a>
@@ -58,21 +65,4 @@
   </div>
 </nav>
 
-</template>
-
-<script>
-import LoginBadge from './LoginBadge';
-export default {
-    data(){
-        return {
-            isActive: false
-        }
-    },
-    components: {
-        LoginBadge,
-    }
-}
-</script>
-
-<style>
-</style>
+)}

@@ -1,10 +1,24 @@
 import React from 'react';
 import logo from './assets/logo.svg';
 import './App.css';
+import Nav from "./components/Nav"
 
 function App() {
   return (
     <div className="App">
+
+      <Nav />
+      <section classNae="hero is-medium is-link">
+        <div classNae="hero-body">
+          <p className="title">
+            Medium hero
+          </p>
+          <p> className="subtitle">
+            Medium subtitle
+          </p>
+        </div>
+      </section>
+
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
