@@ -9,14 +9,13 @@ const Feed = ()=> <Hero title="Feed Page" subtitle="The page with all your stuff
 const Users = ()=> <Hero title="Users Page" subtitle="The list of users page" />
 
 
-
 export default function OurRoutes(){
     return (
     <Routes>
         <Route path="/" element={ <Home /> } />
-        <Route path="/" element={ <Home /> } />
-        <Route path="/" element={ <Home /> } />
-        <Route path="/" element={ <Home /> } />
+        <Route path="/feed" element={ <Feed /> } />
+        <Route path="/about" element={ <About /> } />
+        <Route path="/users" element={ <Users /> } />
     </Routes>
     );
 }
