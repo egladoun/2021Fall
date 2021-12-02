@@ -2,18 +2,20 @@ import React from 'react';
 import logo from './assets/logo.svg';
 import './App.css';
 import Nav from "./components/Nav"
+import { BrowserRouter } from 'react-router-dom';
 
 function App() {
   return (
+      <BrowserRouter>
     <div className="App">
 
       <Nav />
-      <section classNae="hero is-medium is-link">
-        <div classNae="hero-body">
+      <section className="hero is-medium is-link">
+        <div className="hero-body">
           <p className="title">
             Medium hero
           </p>
-          <p> className="subtitle">
+          <p className="subtitle">
             Medium subtitle
           </p>
         </div>
@@ -34,6 +36,7 @@ function App() {
         </a>
       </header>
     </div>
+    </BrowserRouter>
   );
 }
 
