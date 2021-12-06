@@ -7,9 +7,9 @@ import logo from '../assets/logo.svg';
 
 export default function Nav() {
 
-  const [isActive, setIsActive] = useState(false);
+    const [isActive, setIsActive] = useState(false);
 
-  return (
+    return (
   <nav className="navbar is-primary" role="navigation" aria-label="main navigation">
   <div className="navbar-brand">
     <a className="navbar-item" href="https://bulma.io">
@@ -17,24 +17,24 @@ export default function Nav() {
       <h3 className="title">Be Happy</h3>
     </a>
 
-    <a role="button" className={"navbar-burger" + ( isActive && ' is-active')} aria-label="menu" aria-expanded="false" onClick={()=> setIsActive(!isActive) } >
+    <a role="button" className={"navbar-burger" + ( isActive ? ' is-active' : '')} aria-label="menu" aria-expanded="false" onClick={()=> setIsActive(!isActive) }  >
       <span aria-hidden="true"></span>
       <span aria-hidden="true"></span>
       <span aria-hidden="true"></span>
     </a>
   </div>
 
-  <div className="navbar-menu" className="{'is-active': isActive }">
+  <div className={"navbar-menu" + ( isActive ? ' is-active' : '')}>
     <div className="navbar-start">
       <NavLink className={({isActive}) => "navbar-item is-tab" + ( isActive && " is-active")} to="/" exact>
         Home
       </NavLink>
 
-      <NavLink className="navbar-item is-tab" to="/feed" active-className="is-active">
+      <NavLink  className={({isActive}) => "navbar-item is-tab" + ( isActive && " is-active")}  to="/feed" >
         Feed
       </NavLink>
 
-      <NavLink className="navbar-item is-tab" to="/about" active-className="is-active">
+      <NavLink className={({isActive}) => "navbar-item is-tab" + ( isActive && " is-active")}  to="/about" >
         Documentation
       </NavLink>
 
@@ -44,7 +44,7 @@ export default function Nav() {
         </a>
 
         <div className="navbar-dropdown">
-          <NavLink className="navbar-item is-tab" to="about" active-className="is-active">
+          <NavLink  className={({isActive}) => "navbar-item is-tab" + ( isActive && " is-active")}  to="about" >
             About
           </NavLink>
           <a className="navbar-item">

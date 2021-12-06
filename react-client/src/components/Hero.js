@@ -1,11 +1,11 @@
 import React from "react";
 
-export default function(){
-    return(
+export default function(props){
+    return (
     <section className="hero is-medium is-link">
         <div className="hero-body">
             <p className="title">
-                Home Page
+                {props.title}
             </p>
             <p className="subtitle">
                 {props.subtitle}

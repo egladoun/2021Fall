@@ -1,6 +1,6 @@
 import React from "react";
 import { Route, Routes } from "react-router";
-import Hero from "./views/Hero";
+import Hero from "./components/Hero";
 
 
 const About = ()=> <h1 className="title">Welcome to the About Page</h1>
@@ -15,6 +15,7 @@ export default function OurRoutes(){
         <Route path="/" element={ <Home /> } />
         <Route path="/feed" element={ <Feed /> } />
         <Route path="/about" element={ <About /> } />
+        <Route path="/login" element={ <Home /> } />
         <Route path="/users" element={ <Users /> } />
     </Routes>
     );
